@@ -1,0 +1,7 @@
+C:\Users\conne\source\repos\FootballSim\FootballSim\bin\Debug\FootballSim.exe.config
+C:\Users\conne\source\repos\FootballSim\FootballSim\bin\Debug\FootballSim.exe
+C:\Users\conne\source\repos\FootballSim\FootballSim\bin\Debug\FootballSim.pdb
+C:\Users\conne\source\repos\FootballSim\FootballSim\obj\Debug\FootballSim.csprojAssemblyReference.cache
+C:\Users\conne\source\repos\FootballSim\FootballSim\obj\Debug\FootballSim.csproj.CoreCompileInputs.cache
+C:\Users\conne\source\repos\FootballSim\FootballSim\obj\Debug\FootballSim.exe
+C:\Users\conne\source\repos\FootballSim\FootballSim\obj\Debug\FootballSim.pdb
