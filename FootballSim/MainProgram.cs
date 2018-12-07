@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 /*Stuff Want to Do:
  * 1. Add more specialized roles overall rating. (Slot Receiver)
+ * 2. Make a random player generator
  */
 namespace FootballSim
 {
@@ -14,10 +16,42 @@ namespace FootballSim
         static void Main(string[] args)
         {
             //hello here is a change
-            Player player = new Player("Conner", "Christopherson", 23, "Quarterback", "01/02/1995", "Mizzou", 84, 155, false, 0);
-            System.Console.WriteLine(player.printPlayer());
+            //Player player = new Player("Conner", "Christopherson", 23, "Left Guard", "01/02/1995", "Mizzou", 84, 155, false, 0);
+            //System.Console.WriteLine(player.printPlayer());
+            string[] firstNames = {"Hal", "Wilson", "Emile", "Emmanuel", "Elwood", "Parker", "Lucas", "Gonzalo", "Miquel", "Al", "Bradly", "Royal", "Stanford", "Rusty", "Raymundo", "Dan", "Leo",
+                                  "Tyler", "Edgar", "Boris", "Amos", "Giuseppe", "Virgil", "Burton", "Alexis", "Dong", "Cornell", "Robbie", "Travis", "Jerry", "Brock", "Alberto", "Damien", "Brian",
+                                  "Larry", "Percy", "Ramon", "Kory", "Robert", "Wilton", "Asa", "Buddy", "Porfirio", "Warren", "Efrain", "Alfonso", "Nicolas", "Lou", "Merle", "Bernard"};
+
+
             Console.ReadLine();
         }
+    }
+
+    class Team
+    {
+        private string name;
+        private string stadium;
+
+        private ArrayList players;
+
+        public Team(string tName, string tStadium)
+        {
+            players = new ArrayList();
+            name = tName;
+            stadium = tStadium;
+        }
+
+        public void addPlayer(Player aPlayer)
+        {
+            players.Add(aPlayer);
+        }
+    }
+
+    class Contract
+    {
+        private int length;
+        private double salary;
+        private double 
     }
 
     class Player
@@ -175,6 +209,91 @@ namespace FootballSim
                                     + (playerAttributes["shedding"] * .02) + (playerAttributes["trucking"] * .02) + (playerAttributes["elusiveness"] * .01) + (playerAttributes["cutting"] * .01)
                                     + (playerAttributes["ballControl"] * .03) + (playerAttributes["acceleration"] * .06) + (playerAttributes["agility"] * .05) + (playerAttributes["strength"] * .02)
                                     + (playerAttributes["passBlocking"] * .01) + (playerAttributes["runBlocking"] * .04) + (playerAttributes["powerBlocking"] * .02);
+                    break;
+                case "Left Tackle":
+                    /*Formula (Out of 100):
+                     * Awareness: 12
+                     * Speed: 5
+                     * Power Blocking: 8
+                     * Technical Blocking: 14
+                     * Man Blocking: 10
+                     * Zone Blocking: 7
+                     * Run Blocking: 10
+                     * Pass Blocking: 14
+                     * Pull Blocking: 5
+                     * Strength: 12
+                     */
+                    overallRating = (playerAttributes["awareness"] * .12) + (playerAttributes["speed"] * .05) + (playerAttributes["powerBlocking"] * .08) + (playerAttributes["technicalBlocking"] * .14)
+                                    + (playerAttributes["manBlocking"] * .1) + (playerAttributes["zoneBlocking"] * .07) + (playerAttributes["runBlocking"] * .1)
+                                    + (playerAttributes["passBlocking"] * .14) + (playerAttributes["pullBlocking"] * .05) + (playerAttributes["strength"] * .12);
+                    break;
+                case "Left Guard":
+                    /*Formula (Out of 100):
+                     * Awareness: 10
+                     * Speed: 4
+                     * Power Blocking: 12
+                     * Technical Blocking: 10
+                     * Man Blocking: 10
+                     * Zone Blocking: 10
+                     * Run Blocking: 12
+                     * Pass Blocking: 10
+                     * Pull Blocking: 8
+                     * Strength: 14
+                     */
+                    overallRating = (playerAttributes["awareness"] * .1) + (playerAttributes["speed"] * .04) + (playerAttributes["powerBlocking"] * .12) + (playerAttributes["technicalBlocking"] * .1)
+                                    + (playerAttributes["manBlocking"] * .1) + (playerAttributes["zoneBlocking"] * .1) + (playerAttributes["runBlocking"] * .12)
+                                    + (playerAttributes["passBlocking"] * .1) + (playerAttributes["pullBlocking"] * .08) + (playerAttributes["strength"] * .14);
+                    break;
+                case "Center":
+                    /*Formula (Out of 100):
+                     * Awareness: 14
+                     * Speed: 4
+                     * Power Blocking: 10
+                     * Technical Blocking: 10
+                     * Man Blocking: 9
+                     * Zone Blocking: 11
+                     * Run Blocking: 14
+                     * Pass Blocking: 9
+                     * Pull Blocking: 7
+                     * Strength: 12
+                     */
+                    overallRating = (playerAttributes["awareness"] * .14) + (playerAttributes["speed"] * .04) + (playerAttributes["powerBlocking"] * .1) + (playerAttributes["technicalBlocking"] * .1)
+                                    + (playerAttributes["manBlocking"] * .09) + (playerAttributes["zoneBlocking"] * .11) + (playerAttributes["runBlocking"] * .14)
+                                    + (playerAttributes["passBlocking"] * .09) + (playerAttributes["pullBlocking"] * .07) + (playerAttributes["strength"] * .12);
+                    break;
+                case "Right Guard":
+                    /*Formula (Out of 100):
+                     * Awareness: 10
+                     * Speed: 4
+                     * Power Blocking: 13
+                     * Technical Blocking: 9
+                     * Man Blocking: 11
+                     * Zone Blocking: 9
+                     * Run Blocking: 13
+                     * Pass Blocking: 9
+                     * Pull Blocking: 8
+                     * Strength: 14
+                     */
+                    overallRating = (playerAttributes["awareness"] * .1) + (playerAttributes["speed"] * .04) + (playerAttributes["powerBlocking"] * .13) + (playerAttributes["technicalBlocking"] * .09)
+                                    + (playerAttributes["manBlocking"] * .11) + (playerAttributes["zoneBlocking"] * .09) + (playerAttributes["runBlocking"] * .13)
+                                    + (playerAttributes["passBlocking"] * .09) + (playerAttributes["pullBlocking"] * .08) + (playerAttributes["strength"] * .14);
+                    break;
+                case "Right Tackle":
+                    /*Formula (Out of 100):
+                     * Awareness: 10
+                     * Speed: 5
+                     * Power Blocking: 9
+                     * Technical Blocking: 12
+                     * Man Blocking: 11
+                     * Zone Blocking: 7
+                     * Run Blocking: 11
+                     * Pass Blocking: 13
+                     * Pull Blocking: 5
+                     * Strength: 12
+                     */
+                    overallRating = (playerAttributes["awareness"] * .1) + (playerAttributes["speed"] * .05) + (playerAttributes["powerBlocking"] * .09) + (playerAttributes["technicalBlocking"] * .12)
+                                    + (playerAttributes["manBlocking"] * .11) + (playerAttributes["zoneBlocking"] * .07) + (playerAttributes["runBlocking"] * .11)
+                                    + (playerAttributes["passBlocking"] * .13) + (playerAttributes["pullBlocking"] * .05) + (playerAttributes["strength"] * .12);
                     break;
             }
 
