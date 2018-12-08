@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /*Stuff Want to Do:
- * 1. Add more specialized roles overall rating. (Slot Receiver)
+ * 1. Add more specialized roles overall rating. (Slot Receiver) Maybe in "subpositions"?
  * 2. Make a random player generator
  */
 namespace FootballSim
@@ -18,10 +18,21 @@ namespace FootballSim
             //hello here is a change
             //Player player = new Player("Conner", "Christopherson", 23, "Left Guard", "01/02/1995", "Mizzou", 84, 155, false, 0);
             //System.Console.WriteLine(player.printPlayer());
-            string[] firstNames = {"Hal", "Wilson", "Emile", "Emmanuel", "Elwood", "Parker", "Lucas", "Gonzalo", "Miquel", "Al", "Bradly", "Royal", "Stanford", "Rusty", "Raymundo", "Dan", "Leo",
-                                  "Tyler", "Edgar", "Boris", "Amos", "Giuseppe", "Virgil", "Burton", "Alexis", "Dong", "Cornell", "Robbie", "Travis", "Jerry", "Brock", "Alberto", "Damien", "Brian",
-                                  "Larry", "Percy", "Ramon", "Kory", "Robert", "Wilton", "Asa", "Buddy", "Porfirio", "Warren", "Efrain", "Alfonso", "Nicolas", "Lou", "Merle", "Bernard"};
-
+            Random rand = new Random();
+            string[] firstNames = {"Hal", "Russell", "Emile", "Emmanuel", "Elwood", "Parker", "Lucas", "Patrick", "Alex", "Robert", "Bradley", "Royal", "Stanford", "Christian", "Kelvin", "Dan", "Leo",
+                                  "Tyler", "Edgar", "Boris"};
+            string[] lastNames = {"Ehinger", "Stone", "Jackson", "Harding", "Sullivan", "Parker", "Lucas", "Rogers", "Hays", "Reeland", "Fuller", "Bridges", "Williams", "Michel", "Johnson", "Smith", "Campbell",
+                                  "Benjamin", "Alexander", "Thomas"};
+            //put random age in for loop
+            string[] positions = {"Quarterback", "Running Back", "Wide Receiver", "Tight End", "Left Tackle", "Left Guard", "Center", "Right Guard", "Right Tackle", "Defensive End", "Defensive Tackle",
+                                 "Outside Linebacker", "Inside Linebacker", "Cornerback", "Strong Safety", "Free Safety", "Kicker", "Punter", "Long Snapper"};
+            //do birth date stuff in for loop
+            string[] colleges = {"Florida", "Missouri", "Penn State", "Ohio State", "Alabama", "Texas A&M", "LSU", "Notre Dame", "Texas", "Tennessee", "Stanford", "Oregan", "USC", "UCLA", "Georgia",
+                                "Purdue", "Michigan", "Michigan State", "Pittsburgh", "Illinois"};
+            //rand numbers for height
+            //rand numbers for weight
+            //set all injuries to false
+            //set all inj lengths to 0
 
             Console.ReadLine();
         }
@@ -51,7 +62,6 @@ namespace FootballSim
     {
         private int length;
         private double salary;
-        private double 
     }
 
     class Player
